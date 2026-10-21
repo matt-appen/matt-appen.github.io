@@ -310,6 +310,18 @@ a { color: inherit; }
 .biverkningar .kalla { max-width: none; color: var(--natt); }
 @media (max-width: 880px) { .flik-panel { grid-template-columns: 1fr; } }
 
+
+/* Frågorna du inte vågar ställa */
+.fragalada { padding-bottom: var(--avsnitt); }
+.fragalada-rad { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.chatt { display: flex; flex-direction: column; gap: var(--luft-3); }
+.bubbla { margin: 0; max-width: 34ch; padding: var(--luft-3) var(--luft-4); border-radius: 22px; font-size: 16px; line-height: 1.4; }
+.fraga { align-self: flex-end; background: var(--natt); color: var(--gradde); border-bottom-right-radius: 6px; font-weight: 500; }
+.svar { align-self: flex-start; max-width: 42ch; background: var(--gradde-upphojd); border-bottom-left-radius: 6px; }
+.svar-kalla { margin-top: var(--luft-2); font-size: 13px; color: var(--natt-dampad); }
+.fraga:nth-of-type(n+2) { background: var(--persika); color: var(--natt); }
+@media (max-width: 880px) { .fragalada-rad { grid-template-columns: 1fr; } }
+
 /* Det enda rörelseögonblicket: prickarna studsar in en gång. */
 @media (prefers-reduced-motion: no-preference) {
   .prick { transform-box: fill-box; transform-origin: 50% 100%; animation: studs .9s cubic-bezier(.3, 1.6, .5, 1) both; }
