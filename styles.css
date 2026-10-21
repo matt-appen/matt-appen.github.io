@@ -307,14 +307,6 @@ a { color: inherit; }
 .panel-kolumn ul { padding-left: 1.1em; display: grid; gap: var(--luft-2); }
 .panel-hur p { font-size: 18px; }
 .panel-varden { padding: var(--luft-6); border-radius: var(--rund-m); background: var(--gradde); }
-.biv-stod { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--luft-6); margin: var(--luft-12) 0 0; padding: 0; list-style: none; }
-.biv-stod li { padding-top: var(--luft-6); border-top: 2px solid var(--natt); }
-.biv-stod h3 { font-size: 22px; line-height: 1.1; letter-spacing: -.02em; }
-.biv-stod p { margin-top: var(--luft-2); font-size: 16px; }
-.biv-smakprov { margin-top: var(--luft-12); font-size: 24px; letter-spacing: -.02em; }
-.biverkningar .biv-smakprov + .flikar { margin-top: var(--luft-4); }
-@media (max-width: 880px) { .biv-stod { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 520px) { .biv-stod { grid-template-columns: 1fr; } }
 .biverkningar .kalla { max-width: none; color: var(--natt); }
 @media (max-width: 880px) { .flik-panel { grid-template-columns: 1fr; } }
 
