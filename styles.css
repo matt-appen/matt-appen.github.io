@@ -1,0 +1,251 @@
+/* Mätt – hemsida. Färger, typsnitt och mått från Mätts brandbook. */
+
+@font-face { font-family: "Bricolage Grotesque"; src: url("assets/fonts/BricolageGrotesque-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Bricolage Grotesque"; src: url("assets/fonts/BricolageGrotesque-800.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("assets/fonts/Figtree-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  --gradde: #f7f2ea;
+  --gradde-upphojd: #ffffff;
+  --linje: #e6dcd3;
+  --natt: #1c1420;
+  --natt-dampad: #6b5d66;
+  --tomat: #c93b20;
+  --pa-tomat: #ffffff;
+  --tomat-logo: #e5432a;
+  --lime: #c8f169;
+  --pa-lime: #1c1420;
+  --plommon: #3b1f4f;
+  --pa-plommon: #f7f2ea;
+  --persika: #ffd6c8;
+  --lime-mjuk: #eefacb;
+
+  --font-display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --font-text: Figtree, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --luft-1: 4px; --luft-2: 8px; --luft-3: 12px; --luft-4: 16px;
+  --luft-6: 24px; --luft-8: 32px; --luft-12: 48px;
+  --rund-s: 8px; --rund-m: 16px; --rund-l: 28px; --rund-piller: 9999px;
+
+  --fokusring: 0 0 0 2px var(--gradde), 0 0 0 4px var(--plommon);
+  --avsnitt: clamp(64px, 10vw, 128px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--gradde);
+  color: var(--natt);
+  font: 400 17px/1.55 var(--font-text);
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 800; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; }
+:focus-visible { outline: none; box-shadow: var(--fokusring); border-radius: var(--rund-s); }
+
+.ram { width: min(1180px, 100% - 2 * var(--luft-6)); margin-inline: auto; }
+.dold { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.hoppa { position: absolute; left: var(--luft-4); top: -60px; z-index: 10; padding: var(--luft-2) var(--luft-4); background: var(--natt); color: var(--gradde); border-radius: var(--rund-piller); }
+.hoppa:focus { top: var(--luft-4); }
+
+/* Knappar */
+.knapp {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 var(--luft-6);
+  border: 0; border-radius: var(--rund-piller);
+  font: 600 16px/1 var(--font-text); text-decoration: none; cursor: pointer;
+  transition: transform .15s ease;
+}
+.knapp:active { transform: scale(.97); }
+.knapp:focus-visible { border-radius: var(--rund-piller); }
+.knapp-primar { background: var(--tomat); color: var(--pa-tomat); }
+.knapp-lime { background: var(--lime); color: var(--pa-lime); }
+.knapp-sekundar { background: transparent; color: var(--natt); box-shadow: inset 0 0 0 2px var(--natt); }
+.knapp-sekundar:focus-visible { box-shadow: inset 0 0 0 2px var(--natt), var(--fokusring); }
+.knapp-liten { min-height: 40px; padding: 0 var(--luft-4); font-size: 15px; }
+
+/* Topp */
+.topp { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--gradde) 92%, transparent); backdrop-filter: blur(8px); }
+.topp-rad { display: flex; align-items: center; gap: var(--luft-6); min-height: 72px; }
+.topp-logo { flex: none; }
+.topp nav { margin-left: auto; }
+.meny { display: flex; gap: var(--luft-6); margin: 0; padding: 0; list-style: none; font-weight: 500; font-size: 15px; }
+.meny a { text-decoration: none; }
+.meny a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 760px) {
+  .meny { display: none; }
+  .topp-rad .knapp { margin-left: auto; }
+}
+
+/* Hjälte */
+.hjalte { padding: clamp(32px, 6vw, 80px) 0 var(--avsnitt); }
+.hjalte-rad { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.jatteord { width: min(100%, 560px); margin-left: -6px; }
+.jatteord-bokstaver { fill: var(--natt); }
+.prick-1 { fill: var(--tomat-logo); }
+.prick-2 { fill: var(--tomat-logo); }
+.hjalte h1 { margin-top: var(--luft-8); font-size: clamp(34px, 4.6vw, 56px); line-height: 1; letter-spacing: -.03em; max-width: 14ch; }
+.ingress { margin-top: var(--luft-4); max-width: 44ch; font-size: clamp(18px, 1.6vw, 20px); color: var(--natt); }
+
+.vantelista-form { display: flex; flex-wrap: wrap; gap: var(--luft-2); margin-top: var(--luft-8); max-width: 520px; }
+.vantelista-form input {
+  flex: 1 1 220px; min-height: 48px; padding: 0 var(--luft-6);
+  border: 2px solid var(--natt); border-radius: var(--rund-piller);
+  background: var(--gradde-upphojd); color: var(--natt);
+  font: 500 16px/1 var(--font-text);
+}
+.vantelista-form input::placeholder { color: var(--natt-dampad); }
+.vantelista-form input:focus-visible { box-shadow: var(--fokusring); }
+.vantelista-form input[aria-invalid="true"] { border-color: #b3261e; }
+.form-hjalp { flex-basis: 100%; font-size: 14px; color: var(--natt-dampad); }
+.form-svar { flex-basis: 100%; font-weight: 600; font-size: 15px; }
+.form-svar:empty { display: none; }
+.form-svar.fel { color: #b3261e; }
+
+/* Telefonen */
+.telefon {
+  justify-self: center; width: min(100%, 340px); aspect-ratio: 9 / 16.5;
+  padding: 12px; border-radius: 48px; background: var(--natt);
+  transform: rotate(3deg);
+}
+.telefon-skarm {
+  display: flex; flex-direction: column; gap: var(--luft-3);
+  height: 100%; padding: var(--luft-8) var(--luft-4) var(--luft-4);
+  border-radius: 38px; background: var(--gradde); overflow: hidden;
+}
+.app-topp { display: flex; flex-direction: column; gap: 2px; padding: 0 var(--luft-1) var(--luft-1); }
+.app-dag { font-size: 12px; font-weight: 500; color: var(--natt-dampad); }
+.app-rubrik { font: 800 28px/1.05 var(--font-display); letter-spacing: -.025em; }
+.app-kort { display: flex; flex-direction: column; gap: 6px; padding: var(--luft-4); border-radius: 22px; background: var(--gradde-upphojd); }
+.app-kort-lime { background: var(--lime); color: var(--pa-lime); }
+.app-kort-litet { flex-direction: row; justify-content: space-between; align-items: center; }
+.app-over { font-size: 12px; font-weight: 600; color: var(--natt-dampad); }
+.app-kort-lime .app-over { color: var(--pa-lime); }
+.app-tal { font: 800 38px/1 var(--font-display); letter-spacing: -.03em; }
+.app-tal small { margin-left: 4px; font: 600 13px/1 var(--font-text); letter-spacing: 0; }
+.app-bar { display: block; height: 8px; margin-top: 4px; border-radius: var(--rund-piller); background: var(--persika); overflow: hidden; }
+.app-bar i { display: block; width: 78%; height: 100%; border-radius: inherit; background: var(--tomat); }
+.app-rad { font-size: 13px; line-height: 1.35; }
+.app-prickar { display: flex; gap: 6px; margin-top: 2px; }
+.app-prickar b { width: 18px; height: 18px; border-radius: 50%; background: var(--pa-lime); }
+.app-prickar b.tom { background: transparent; box-shadow: inset 0 0 0 2px var(--pa-lime); }
+.app-dos { font: 700 15px/1 var(--font-display); }
+.app-tips { margin-top: auto; padding: var(--luft-3) var(--luft-4); border-radius: 22px; background: var(--persika); font-size: 13px; line-height: 1.35; }
+.app-tips b { font-weight: 700; }
+
+@media (max-width: 880px) {
+  .hjalte-rad { grid-template-columns: 1fr; }
+  .telefon { width: min(78%, 300px); }
+}
+
+/* Avsnitt */
+.avsnitt-rubrik { font-size: clamp(30px, 4vw, 48px); line-height: 1.02; letter-spacing: -.03em; max-width: 18ch; }
+
+.delar { padding-bottom: var(--avsnitt); }
+.delar-rutnat {
+  display: grid; gap: var(--luft-4); margin-top: var(--luft-12);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.del { display: flex; flex-direction: column; gap: var(--luft-3); padding: clamp(24px, 3vw, 40px); border-radius: var(--rund-l); }
+.del h3 { font-size: clamp(26px, 2.8vw, 36px); line-height: 1; letter-spacing: -.025em; }
+.del p { max-width: 42ch; }
+.del-dagbok { grid-column: span 4; background: var(--gradde-upphojd); }
+.del-kost { grid-column: span 2; background: var(--persika); }
+.del-traning { grid-column: span 2; background: var(--lime-mjuk); }
+.del-kunskap { grid-column: span 4; background: var(--plommon); color: var(--pa-plommon); }
+@media (max-width: 760px) {
+  .delar-rutnat { grid-template-columns: 1fr; }
+  .del { grid-column: auto; }
+}
+
+.muskler { padding: var(--avsnitt) 0; background: var(--tomat); color: var(--pa-tomat); }
+.muskler-rad { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--luft-12); align-items: start; }
+.muskler h2 { font-size: clamp(38px, 5.6vw, 72px); line-height: .98; letter-spacing: -.035em; }
+.muskler-text { display: grid; gap: var(--luft-4); font-size: clamp(18px, 1.5vw, 20px); max-width: 46ch; }
+@media (max-width: 760px) { .muskler-rad { grid-template-columns: 1fr; gap: var(--luft-6); } }
+
+.resan { padding: var(--avsnitt) 0; }
+.resan-lista {
+  position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--luft-6);
+  margin: var(--luft-12) 0 0; padding: 0; list-style: none; counter-reset: steg;
+}
+.resan-lista::before { content: ""; position: absolute; left: 14px; right: 14px; top: 13px; height: 2px; background: var(--natt); }
+.resan-lista li { position: relative; padding-top: 52px; counter-increment: steg; }
+.resan-lista li::before {
+  content: counter(steg); position: absolute; top: 0; left: 0;
+  display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--natt); color: var(--gradde); font: 700 14px/1 var(--font-text);
+}
+.resan-lista li:last-child::before { background: var(--lime); color: var(--pa-lime); box-shadow: inset 0 0 0 2px var(--natt); }
+.resan-lista h3 { font-size: 22px; line-height: 1.1; letter-spacing: -.02em; }
+.resan-lista p { margin-top: var(--luft-2); font-size: 16px; color: var(--natt-dampad); }
+@media (max-width: 880px) {
+  .resan-lista { grid-template-columns: 1fr; gap: var(--luft-8); }
+  .resan-lista::before { left: 13px; right: auto; top: 14px; bottom: 14px; width: 2px; height: auto; }
+  .resan-lista li { padding: 0 0 0 52px; }
+}
+
+.partner { padding: var(--avsnitt) 0; background: var(--lime-mjuk); }
+.partner-rad { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) auto; gap: var(--luft-8); align-items: center; }
+.partner h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1; letter-spacing: -.03em; }
+.partner p { max-width: 50ch; }
+@media (max-width: 880px) { .partner-rad { grid-template-columns: 1fr; gap: var(--luft-4); justify-items: start; } }
+
+.fragor { padding: var(--avsnitt) 0; }
+.fragor-rad { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: var(--luft-12); }
+.fragor-lista { border-top: 2px solid var(--natt); }
+.fragor details { border-bottom: 1px solid var(--linje); }
+.fragor summary {
+  display: flex; justify-content: space-between; align-items: center; gap: var(--luft-4);
+  padding: var(--luft-6) 0; cursor: pointer; list-style: none;
+  font: 700 20px/1.25 var(--font-display); letter-spacing: -.01em;
+}
+.fragor summary::-webkit-details-marker { display: none; }
+.fragor summary::after {
+  content: ""; flex: none; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--persika) center / 12px 12px no-repeat
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10M1 6h10' stroke='%231c1420' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  transition: transform .2s ease;
+}
+.fragor details[open] summary::after { transform: rotate(45deg); }
+.fragor details p { padding: 0 0 var(--luft-6); max-width: 60ch; }
+@media (max-width: 880px) { .fragor-rad { grid-template-columns: 1fr; gap: var(--luft-6); } }
+
+.slut { padding: var(--avsnitt) 0; background: var(--plommon); color: var(--pa-plommon); }
+.slut-rad { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.slut h2 { font-size: clamp(40px, 6vw, 80px); line-height: .98; letter-spacing: -.035em; }
+.slut-rad > p { margin-top: var(--luft-4); font-size: 19px; }
+.slut .vantelista-form { justify-content: center; }
+.slut .vantelista-form input { border-color: var(--pa-plommon); }
+.slut .form-hjalp, .slut .form-svar { color: var(--pa-plommon); }
+.slut .form-svar.fel { color: #ffb4ab; }
+.slut :focus-visible { box-shadow: 0 0 0 2px var(--plommon), 0 0 0 4px var(--lime); }
+
+.fot { padding: var(--luft-12) 0; font-size: 15px; }
+.fot-rad { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--luft-6) var(--luft-12); align-items: start; }
+.fot-rad > p:first-of-type { max-width: 60ch; color: var(--natt-dampad); }
+.fot-lankar { display: flex; gap: var(--luft-6); margin: 0; padding: 0; list-style: none; }
+.fot-smatt { grid-column: 1 / -1; font-size: 13px; color: var(--natt-dampad); }
+@media (max-width: 760px) { .fot-rad { grid-template-columns: 1fr; } }
+
+/* Det enda rörelseögonblicket: prickarna studsar in en gång. */
+@media (prefers-reduced-motion: no-preference) {
+  .prick { transform-box: fill-box; transform-origin: 50% 100%; animation: studs .9s cubic-bezier(.3, 1.6, .5, 1) both; }
+  .prick-1 { animation-delay: .25s; }
+  .prick-2 { animation-delay: .4s; }
+  @keyframes studs {
+    0% { transform: translateY(-120%) scale(.6); opacity: 0; }
+    60% { opacity: 1; }
+    100% { transform: none; opacity: 1; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .knapp, .fragor summary::after { transition: none; }
+}
