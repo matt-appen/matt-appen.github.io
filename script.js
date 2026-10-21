@@ -2,7 +2,7 @@
 const MATT = {
   // Adressen dit väntelistan skickas, t.ex. ett formulär hos Formspree: "https://formspree.io/f/xxxxxx".
   // Tom = sidan sparar inga adresser och säger det till besökaren.
-  vantelistaUrl: "",
+  vantelistaUrl: "https://formspree.io/f/xjygnpnl",
   // E-post för kontaktlänkar.
   kontaktEpost: "hej@exempel.se",
 };
