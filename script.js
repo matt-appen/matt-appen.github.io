@@ -62,3 +62,26 @@ document.querySelectorAll("[data-vantelista]").forEach((form) => {
     }
   });
 });
+
+// Flikar i biverkningsbiblioteket (piltangenter flyttar mellan flikar).
+document.querySelectorAll("[data-flikar]").forEach((flikar) => {
+  const knappar = [...flikar.querySelectorAll('[role="tab"]')];
+  const valj = (knapp, fokus = false) => {
+    knappar.forEach((k) => {
+      const vald = k === knapp;
+      k.setAttribute("aria-selected", String(vald));
+      k.tabIndex = vald ? 0 : -1;
+      document.getElementById(k.getAttribute("aria-controls")).hidden = !vald;
+    });
+    if (fokus) knapp.focus();
+  };
+  knappar.forEach((k, i) => {
+    k.addEventListener("click", () => valj(k));
+    k.addEventListener("keydown", (e) => {
+      const steg = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (steg) { e.preventDefault(); valj(knappar[(i + steg + knappar.length) % knappar.length], true); }
+      if (e.key === "Home") { e.preventDefault(); valj(knappar[0], true); }
+      if (e.key === "End") { e.preventDefault(); valj(knappar[knappar.length - 1], true); }
+    });
+  });
+});
