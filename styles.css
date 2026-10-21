@@ -340,7 +340,7 @@ a { color: inherit; }
 
 /* Telefonen i toppen behåller en mobils proportioner. Texten inuti skalas efter telefonens bredd,
    som en bild, så att den ser likadan ut oavsett skärm och textstorlek. */
-.hjalte .telefon { aspect-ratio: 9 / 15; container-type: inline-size; }
+.hjalte .telefon { aspect-ratio: 9 / 16.5; container-type: inline-size; }
 .hjalte .telefon-skarm { height: 100%; gap: 3.6cqw; padding: 9cqw 4.8cqw 4.8cqw; border-radius: 11cqw; }
 .hjalte .app-dag, .hjalte .app-over { font-size: 3.8cqw; }
 .hjalte .app-rubrik { font-size: 8.9cqw; }
@@ -351,4 +351,4 @@ a { color: inherit; }
 .hjalte .app-dos { font-size: 4.7cqw; white-space: nowrap; }
 .hjalte .app-prickar b { width: 5.7cqw; height: 5.7cqw; }
 .hjalte .app-tips { padding: 3.6cqw 4.8cqw; border-radius: 6.6cqw; }
-@media (max-width: 880px) { .hjalte .telefon { width: min(86%, 320px); } }
+@media (max-width: 880px) { .hjalte .telefon { width: min(72%, 290px); } }
