@@ -307,7 +307,7 @@ a { color: inherit; }
 .panel-kolumn ul { padding-left: 1.1em; display: grid; gap: var(--luft-2); }
 .panel-hur p { font-size: 18px; }
 .panel-varden { padding: var(--luft-6); border-radius: var(--rund-m); background: var(--gradde); }
-.biverkningar .kalla { color: var(--natt); }
+.biverkningar .kalla { max-width: none; color: var(--natt); }
 @media (max-width: 880px) { .flik-panel { grid-template-columns: 1fr; } }
 
 /* Det enda rörelseögonblicket: prickarna studsar in en gång. */
