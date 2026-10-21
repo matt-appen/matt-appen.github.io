@@ -310,20 +310,6 @@ a { color: inherit; }
 .biverkningar .kalla { color: var(--natt); }
 @media (max-width: 880px) { .flik-panel { grid-template-columns: 1fr; } }
 
-/* Tips */
-.tips { padding: var(--avsnitt) 0 0; }
-.tips-rutnat { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--luft-4); margin: var(--luft-12) 0 0; padding: 0; list-style: none; }
-.tips-kort { position: relative; padding: var(--luft-8) var(--luft-6) var(--luft-6); border-radius: var(--rund-l); background: var(--gradde-upphojd); }
-.tips-kort::before { content: ""; display: block; width: 40px; height: 16px; margin-bottom: var(--luft-4);
-  background: radial-gradient(circle 8px at 8px 8px, var(--tomat-logo) 98%, transparent) , radial-gradient(circle 8px at 32px 8px, var(--tomat-logo) 98%, transparent); }
-.tips-kort h3 { font-size: 22px; line-height: 1.1; letter-spacing: -.02em; }
-.tips-kort p { margin-top: var(--luft-2); font-size: 16px; }
-.tips-protein { background: var(--tomat); color: var(--pa-tomat); }
-.tips-protein::before { background: radial-gradient(circle 8px at 8px 8px, var(--lime) 98%, transparent), radial-gradient(circle 8px at 32px 8px, var(--lime) 98%, transparent); }
-.tips-lime { background: var(--lime); color: var(--pa-lime); }
-.tips-lime::before { background: radial-gradient(circle 8px at 8px 8px, var(--natt) 98%, transparent), radial-gradient(circle 8px at 32px 8px, var(--natt) 98%, transparent); }
-@media (max-width: 880px) { .tips-rutnat { grid-template-columns: 1fr; } }
-
 /* Det enda rörelseögonblicket: prickarna studsar in en gång. */
 @media (prefers-reduced-motion: no-preference) {
   .prick { transform-box: fill-box; transform-origin: 50% 100%; animation: studs .9s cubic-bezier(.3, 1.6, .5, 1) both; }
