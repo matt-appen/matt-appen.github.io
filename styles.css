@@ -282,20 +282,7 @@ a { color: inherit; }
 .app-artikel-rubrik { font: 800 20px/1.1 var(--font-display); letter-spacing: -.02em; }
 .app-artiklar li { padding-block: 12px; }
 
-/* Effekt */
-.effekt { padding: var(--avsnitt) 0; }
-.effekt-rad { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); margin-top: var(--luft-12); align-items: start; }
-.stor-siffra { font: 800 clamp(72px, 11vw, 148px)/.9 var(--font-display); letter-spacing: -.05em; color: var(--tomat); }
-.effekt-tal > p:nth-child(2) { margin-top: var(--luft-6); max-width: 44ch; font-size: 18px; }
 .kalla { margin-top: var(--luft-4); max-width: 60ch; font-size: 13px; color: var(--natt-dampad); }
-.effekt-faser { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--luft-4); }
-.effekt-faser li { position: relative; padding: var(--luft-6) var(--luft-6) var(--luft-6) 72px; border-radius: var(--rund-l); background: var(--gradde-upphojd); }
-.effekt-faser li::before { content: ""; position: absolute; left: var(--luft-6); top: var(--luft-6); width: 28px; height: 28px; border-radius: 50%; background: var(--persika); }
-.effekt-faser li:nth-child(2)::before { background: var(--tomat); }
-.effekt-faser li:nth-child(3)::before { background: var(--lime); box-shadow: inset 0 0 0 2px var(--natt); }
-.effekt-faser h3 { font-size: 22px; letter-spacing: -.02em; }
-.effekt-faser p { margin-top: var(--luft-2); font-size: 16px; }
-@media (max-width: 880px) { .effekt-rad { grid-template-columns: 1fr; } }
 
 /* Biverkningar */
 .biverkningar { padding: var(--avsnitt) 0; background: var(--persika); }
