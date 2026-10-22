@@ -19,4 +19,4 @@ Hemsidan för Mätt, appen för dig som behandlas med GLP-1. En statisk sida uta
 
 ## Egen domän
 
-När domänen är köpt: lägg till en fil `CNAME` med domännamnet och peka domänens DNS mot GitHub Pages.
+Hemsidan nås på https://mätt.app (tekniskt namn xn--mtt-qla.app, se filen `CNAME`). DNS ligger hos Loopia: fyra A-poster mot GitHub Pages och www som CNAME mot matt-appen.github.io.
